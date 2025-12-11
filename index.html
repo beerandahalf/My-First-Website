@@ -4,15 +4,37 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My First Website</title>
-    <link rel="stylesheet" href="style.css">
 
     <style>
+        /* Background Gradient */
         body {
-            background-color: #0080C6; /* LA Chargers Blue */
-            color: black; /* text is black */
+            background: linear-gradient(to bottom, #0080C6, #00bfff);
+            color: black;
             font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
         }
 
+        /* Navigation Bar */
+        nav {
+            background-color: #005eb8;
+            text-align: center;
+            padding: 15px;
+        }
+
+        nav a {
+            margin: 15px;
+            color: #FFC20E; /* Chargers yellow */
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        /* Title & Author */
         .title {
             text-align: center;
             font-size: 36px;
@@ -22,34 +44,90 @@
 
         .author {
             text-align: center;
-            font-weight: bold;
-            margin-top: 10px;
             font-size: 18px;
+            margin-top: 5px;
+            font-weight: bold;
         }
 
-        p, h3, li {
-            margin-left: 20px;
+        /* Sections */
+        section {
+            margin: 30px 20px;
+            padding: 15px;
+            background-color: rgba(255, 255, 255, 0.3);
+            border-radius: 10px;
         }
+
+        h3 {
+            margin-top: 0;
+        }
+
+        /* Flex container for images */
+        .flex-container {
+            display: flex;
+            align-items: center;
+            margin-top: 10px;
+        }
+
+        .flex-container img {
+            width: 150px;
+            margin-right: 10px;
+            transition: transform 0.3s;
+            border-radius: 5px;
+        }
+
+        .flex-container img:hover {
+            transform: scale(1.2);
+        }
+
+        /* Embedded video */
+        .video {
+            text-align: center;
+            margin-top: 20px;
+        }
+
     </style>
 </head>
-
 <body>
 
+    <!-- Navigation Bar -->
+    <nav>
+        <a href="#games">Games</a>
+        <a href="#band">Band</a>
+        <a href="#video">Video</a>
+    </nav>
+
+    <!-- Title and Author -->
     <div class="title">My First Website</div>
     <div class="author">By Atticus Ringwood</div>
 
-    <h3>List of my favorite games:</h3>
-    <ul>
-        <li>Pokémon Y</li>
-        <li>Super Mario 3D Land</li>
-        <li>Fallout 4</li>
-        <li>Grand Theft Auto V</li>
-    </ul>
+    <!-- Favorite Games Section -->
+    <section id="games">
+        <h3>List of my favorite games:</h3>
+        <ul>
+            <li>Pokémon Y</li>
+            <li>Super Mario 3D Land</li>
+            <li>Fallout 4</li>
+            <li>Grand Theft Auto V</li>
+        </ul>
+    </section>
 
-    <div style="display: flex; align-items: center; margin-left: 20px;">
-        <img src="image.jpg" alt="My Favorite Band" style="width:150px; margin-right: 10px;">
-        <p>This is the logo of my favorite band.</p>
-    </div>
+    <!-- Favorite Band Section -->
+    <section id="band">
+        <h3>My Favorite Band</h3>
+        <div class="flex-container">
+            <img src="image.jpg" alt="My Favorite Band">
+            <p>This is the logo of my favorite band.</p>
+        </div>
+    </section>
+
+    <!-- Embedded Video Section -->
+    <section id="video">
+        <h3>Check out this video!</h3>
+        <div class="video">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/dQw4w9WgXcQ" 
+            title="YouTube video" frameborder="0" allowfullscreen></iframe>
+        </div>
+    </section>
 
     <script src="index.js"></script>
 </body>
